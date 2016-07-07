@@ -1,0 +1,80 @@
+from khronos.utils import Namespace
+
+mix0 = Namespace(Browse=0.50, Purchase=0.25, Manage=0.25)
+mix1 = Namespace(Browse=0.60, Purchase=0.20, Manage=0.20)
+mix2 = Namespace(Browse=0.40, Purchase=0.30, Manage=0.30)
+
+servtime_3vm = Namespace(Browse     = [("LB", 5.11), 
+                                       ("AS", 71.28), 
+                                       ("DB.cpu", 4.36),
+                                       ("Dom0", 6.62)],
+                         Purchase   = [("LB", 1.50), 
+                                       ("AS", 38.51), 
+                                       ("DB.cpu", 5.93), 
+                                       ("Dom0", 3.48)],
+                         Manage     = [("LB", 1.43), 
+                                       ("AS", 42.03), 
+                                       ("DB.cpu", 7.61), 
+                                       ("Dom0", 4.12)],
+                         WorkOrder  = [("AS", 22.79), 
+                                       ("DB.cpu", 12.85), 
+                                       ("Dom0", 3.91)],
+                         LargeOrder = [("AS", 46.09), 
+                                       ("DB.cpu", 8.57), 
+                                       ("Dom0", 4.45)])
+servtime_3vm_double = Namespace(Browse     = [("LB", 2 * 5.11), 
+                                       ("AS", 2 * 71.28), 
+                                       ("DB.cpu", 2 * 4.36),
+                                       ("Dom0", 2 * 6.62)],
+                         Purchase   = [("LB", 2 * 1.50), 
+                                       ("AS", 2 * 38.51), 
+                                       ("DB.cpu", 2 * 5.93), 
+                                       ("Dom0", 2 * 3.48)],
+                         Manage     = [("LB", 2 * 1.43), 
+                                       ("AS", 2 * 42.03), 
+                                       ("DB.cpu", 2 * 7.61), 
+                                       ("Dom0", 2 * 4.12)],
+                         WorkOrder  = [("AS", 2 * 22.79), 
+                                       ("DB.cpu", 2 * 12.85), 
+                                       ("Dom0", 2 * 3.91)],
+                         LargeOrder = [("AS", 2 * 46.09), 
+                                       ("DB.cpu", 2 * 8.57), 
+                                       ("Dom0", 2 * 4.45)])
+servtime_3vm_disk = Namespace(Browse     = [("LB", 5.11), 
+                                            ("AS", 71.28), 
+                                            ("DB.cpu", 4.36),
+                                            ("DB.disk", 1.0), # 16.0 
+                                            ("Dom0", 6.62)],
+                              Purchase   = [("LB", 1.50), 
+                                            ("AS", 38.51), 
+                                            ("DB.cpu", 5.93), 
+                                            ("DB.disk", 1.0), # 146.0
+                                            ("Dom0", 3.48)],
+                              Manage     = [("LB", 1.43), 
+                                            ("AS", 42.03), 
+                                            ("DB.cpu", 7.61), 
+                                            ("DB.disk", 1.0), # 143.0 
+                                            ("Dom0", 4.12)],
+                              WorkOrder  = [("AS", 22.79), 
+                                            ("DB.cpu", 12.85), 
+                                            ("DB.disk", 1.0), # 180.0
+                                            ("Dom0", 3.91)],
+                              LargeOrder = [("AS", 46.09), 
+                                            ("DB.cpu", 8.57), 
+                                            ("DB.disk", 1.0), # 180.0 
+                                            ("Dom0", 4.45)])
+servtime_2vm = Namespace(Browse     = [("LB+AS", 70.95), 
+                                       ("DB.cpu", 4.24),
+                                       ("Dom0", 3.71)],
+                         Purchase   = [("LB+AS", 37.71), 
+                                       ("DB.cpu", 5.69), 
+                                       ("Dom0", 2.78)],
+                         Manage     = [("LB+AS", 41.25), 
+                                       ("DB.cpu", 7.21), 
+                                       ("Dom0", 3.34)],
+                         WorkOrder  = [("LB+AS", 22.56), 
+                                       ("DB.cpu", 12.50), 
+                                       ("Dom0", 3.80)],
+                         LargeOrder = [("LB+AS", 44.91), 
+                                       ("DB.cpu", 8.19), 
+                                       ("Dom0", 3.80)])
